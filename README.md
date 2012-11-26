@@ -13,3 +13,5 @@ TODO:
 * Separate XADiskSessionFactory with others class as they are just test / examples.
  
 * Make more examples.
+
+* Move from Spring to generic IOC integration
