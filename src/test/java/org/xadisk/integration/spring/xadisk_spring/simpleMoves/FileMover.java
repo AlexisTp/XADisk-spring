@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring;
+package org.xadisk.integration.spring.xadisk_spring.simpleMoves;
 
 import java.io.File;
 

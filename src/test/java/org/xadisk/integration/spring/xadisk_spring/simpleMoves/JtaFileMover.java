@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring;
+package org.xadisk.integration.spring.xadisk_spring.simpleMoves;
 
 import java.io.File;
 
@@ -16,6 +16,7 @@ import org.xadisk.filesystem.exceptions.FileUnderUseException;
 import org.xadisk.filesystem.exceptions.InsufficientPermissionOnFileException;
 import org.xadisk.filesystem.exceptions.LockingFailedException;
 import org.xadisk.filesystem.exceptions.NoTransactionAssociatedException;
+import org.xadisk.integration.spring.xadisk_spring.XADiskSessionFactory;
 
 @Component
 public class JtaFileMover implements FileMover {
