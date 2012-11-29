@@ -10,8 +10,6 @@ TODO:
 
 * Handle Exception Correctly so users get cool message and no "RuntimeException"
  
-* Separate XADiskSessionFactory with others class as they are just test / examples.
- 
 * Make more examples.
 
 * Move from Spring to generic IOC integration
