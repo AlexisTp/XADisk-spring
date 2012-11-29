@@ -3,6 +3,8 @@ package org.xadisk.integration.spring.xadisk_spring;
 import java.util.Hashtable;
 import java.util.Map;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.transaction.RollbackException;
 import javax.transaction.Synchronization;
 import javax.transaction.SystemException;
@@ -10,8 +12,6 @@ import javax.transaction.Transaction;
 import javax.transaction.TransactionManager;
 
 import org.hibernate.util.JTAHelper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.xadisk.bridge.proxies.interfaces.XAFileSystem;
 import org.xadisk.bridge.proxies.interfaces.XASession;
 
@@ -21,7 +21,7 @@ import org.xadisk.bridge.proxies.interfaces.XASession;
  * @author Alexis
  * 
  */
-@Component
+@Named
 public class XADiskSessionFactory {
 
 	private TransactionManager txManager;
@@ -30,8 +30,9 @@ public class XADiskSessionFactory {
 
 	private XAFileSystem xaFileSystem;
 
-	@Autowired
-	public XADiskSessionFactory(TransactionManager txManager, XAFileSystem xaFileSystem) {
+	@Inject
+	public XADiskSessionFactory(TransactionManager txManager,
+			XAFileSystem xaFileSystem) {
 		this.txManager = txManager;
 		this.xaFileSystem = xaFileSystem;
 	}
@@ -39,7 +40,7 @@ public class XADiskSessionFactory {
 	public XASession getCurrentSession() throws IllegalStateException,
 			RollbackException, SystemException {
 		Transaction txn = txManager.getTransaction();
-		if (txn == null){
+		if (txn == null) {
 			throw new RuntimeException("There is not Transaction");
 		}
 		if (!JTAHelper.isInProgress(txn.getStatus())) {

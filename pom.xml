@@ -25,15 +25,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.atomikos</groupId>
-			<artifactId>transactions-jta</artifactId>
-			<version>3.6.4</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>jms</artifactId>
-					<groupId>javax.jms</groupId>
-				</exclusion>
-			</exclusions>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
 		</dependency>
 
 		<dependency>
@@ -43,9 +37,23 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions-jta</artifactId>
+			<version>3.6.4</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jms</artifactId>
+					<groupId>javax.jms</groupId>
+				</exclusion>
+			</exclusions>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>3.1.2.RELEASE</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
