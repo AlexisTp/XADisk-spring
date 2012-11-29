@@ -11,5 +11,3 @@ TODO:
 * Handle Exception Correctly so users get cool message and no "RuntimeException"
  
 * Make more examples.
-
-* Move from Spring to generic IOC integration
