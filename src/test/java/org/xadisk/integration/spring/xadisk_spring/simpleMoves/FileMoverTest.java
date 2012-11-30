@@ -15,20 +15,25 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.xadisk.bridge.proxies.interfaces.XAFileSystem;
 import org.xadisk.filesystem.exceptions.FileAlreadyExistsException;
 import org.xadisk.filesystem.exceptions.FileNotExistsException;
 import org.xadisk.filesystem.exceptions.FileUnderUseException;
 import org.xadisk.filesystem.exceptions.InsufficientPermissionOnFileException;
 import org.xadisk.filesystem.exceptions.LockingFailedException;
 import org.xadisk.filesystem.exceptions.NoTransactionAssociatedException;
-import org.xadisk.integration.spring.xadisk_spring.Context;
+import org.xadisk.integration.spring.xadisk_spring.BaseContext;
+import org.xadisk.integration.spring.xadisk_spring.FileMover;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { Context.class })
+@ContextConfiguration(classes = { BaseContext.class })
 public class FileMoverTest {
 
 	@Autowired
 	FileMover fileMover;
+
+	@Autowired
+	private XAFileSystem XAFileSystem;
 
 	File directory;
 
@@ -74,12 +79,12 @@ public class FileMoverTest {
 		a.createNewFile();
 		File b = new File(directory.getAbsolutePath() + File.separator
 				+ "b.txt");
-		try{
-		fileMover.move(a, b, true);
-		} catch (RuntimeException e){
-			
+		try {
+			fileMover.move(a, b, true);
+		} catch (RuntimeException e) {
+
 		}
-		
+
 		Assert.assertTrue(a.exists());
 		Assert.assertTrue(!b.exists());
 	}

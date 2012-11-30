@@ -3,8 +3,6 @@ package org.xadisk.integration.spring.xadisk_spring;
 import java.util.Hashtable;
 import java.util.Map;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.transaction.RollbackException;
 import javax.transaction.Synchronization;
 import javax.transaction.SystemException;
@@ -18,10 +16,9 @@ import org.xadisk.bridge.proxies.interfaces.XASession;
 /**
  * Return current XASession from Transaction
  * 
- * @author Alexis
+ * @author AlexisTp
  * 
  */
-@Named
 public class XADiskSessionFactory {
 
 	private TransactionManager txManager;
@@ -30,7 +27,6 @@ public class XADiskSessionFactory {
 
 	private XAFileSystem xaFileSystem;
 
-	@Inject
 	public XADiskSessionFactory(TransactionManager txManager,
 			XAFileSystem xaFileSystem) {
 		this.txManager = txManager;
