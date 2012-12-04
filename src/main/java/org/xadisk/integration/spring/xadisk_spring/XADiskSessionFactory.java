@@ -57,8 +57,9 @@ public class XADiskSessionFactory {
 			}
 
 			currentSessionMap.put(txn, session);
+			txManager.getTransaction().enlistResource(session.getXAResource());
 		}
-		txManager.getTransaction().enlistResource(session.getXAResource());
+		
 		return session;
 	}
 
