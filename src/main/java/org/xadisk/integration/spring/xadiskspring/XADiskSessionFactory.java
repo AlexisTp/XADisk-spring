@@ -42,7 +42,7 @@ public class XADiskSessionFactory {
 		if (!isInProgress(txn.getStatus())) {
 			// We could register the session against the transaction even though
 			// it is
-			// not started, but we'd have no guarentee of ever getting the map
+			// not started, but we'd have no guarantee of ever getting the map
 			// entries cleaned up (aside from spawning threads).
 			throw new RuntimeException("Current transaction is not in progress");
 		}

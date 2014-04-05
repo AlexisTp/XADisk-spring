@@ -9,5 +9,3 @@ Objective is to integrate XASession into classical Spring Transaction Manager un
 TODO:
 
 * Handle Exception Correctly so users get cool message and no "RuntimeException"
- 
-* Make more examples.
