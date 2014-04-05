@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring;
+package org.xadisk.integration.spring.xadiskspring;
 
 import org.xadisk.bridge.proxies.interfaces.XAFileSystem;
 import org.xadisk.bridge.proxies.interfaces.XAFileSystemProxy;
@@ -17,7 +17,7 @@ public class XAHolder {
 
 	static {
 		StandaloneFileSystemConfiguration configuration = new StandaloneFileSystemConfiguration(
-				"C:\\xadisk", "id-1");
+				"./target/xadisk", "id-1");
 
 		configuration.setSynchronizeDirectoryChanges(false);
 

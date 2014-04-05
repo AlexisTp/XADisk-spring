@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring.database;
+package org.xadisk.integration.spring.xadiskspring.database;
 
 import java.io.File;
 
@@ -14,7 +14,7 @@ import org.xadisk.filesystem.exceptions.FileUnderUseException;
 import org.xadisk.filesystem.exceptions.InsufficientPermissionOnFileException;
 import org.xadisk.filesystem.exceptions.LockingFailedException;
 import org.xadisk.filesystem.exceptions.NoTransactionAssociatedException;
-import org.xadisk.integration.spring.xadisk_spring.FileMover;
+import org.xadisk.integration.spring.xadiskspring.FileMover;
 
 @Component
 public class TwoResourceWorker {

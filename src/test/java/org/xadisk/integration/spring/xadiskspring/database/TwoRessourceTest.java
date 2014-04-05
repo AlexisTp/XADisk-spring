@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring.database;
+package org.xadisk.integration.spring.xadiskspring.database;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,9 +31,9 @@ public class TwoRessourceTest {
 
 	@Autowired
 	private CustomEntityDao customEntityDao;
-	
+
 	File directory;
-	
+
 	CustomEntity ce = new CustomEntity(1l, "test");
 
 	@Before
@@ -47,11 +47,11 @@ public class TwoRessourceTest {
 	@After
 	public void cleanUp() throws IOException {
 		FileUtils.forceDelete(directory);
-		if (customEntityDao.get(1l) != null){
+		if (customEntityDao.get(1l) != null) {
 			customEntityDao.delete(ce);
 		}
 	}
-	
+
 	@Test
 	public void testTwoRessourceCommit() throws IOException,
 			FileAlreadyExistsException, FileNotExistsException,
@@ -73,7 +73,7 @@ public class TwoRessourceTest {
 		Assert.assertNotNull(customEntityDao.get(1l));
 
 	}
-	
+
 	@Test
 	public void testTwoRessourceCommit2() throws IOException,
 			FileAlreadyExistsException, FileNotExistsException,
@@ -110,11 +110,10 @@ public class TwoRessourceTest {
 		File b = new File(directory.getAbsolutePath() + File.separator
 				+ "b.txt");
 
-		try{
-			twoResourceWorker.testCommit(a, b, ce, true);	
-		}
-		catch (Exception e) {
-			
+		try {
+			twoResourceWorker.testCommit(a, b, ce, true);
+		} catch (Exception e) {
+
 		}
 
 		Assert.assertTrue(a.exists());
@@ -122,7 +121,7 @@ public class TwoRessourceTest {
 		Assert.assertNull(customEntityDao.get(1l));
 
 	}
-	
+
 	@Test
 	public void testTwoRessourceRollBack2() throws IOException,
 			FileAlreadyExistsException, FileNotExistsException,
@@ -137,11 +136,10 @@ public class TwoRessourceTest {
 		File b = new File(directory.getAbsolutePath() + File.separator
 				+ "b.txt");
 
-		try{
-			twoResourceWorker.testCommit(a, b, ce, true);	
-		}
-		catch (Exception e) {
-			
+		try {
+			twoResourceWorker.testCommit(a, b, ce, true);
+		} catch (Exception e) {
+
 		}
 
 		Assert.assertTrue(a.exists());

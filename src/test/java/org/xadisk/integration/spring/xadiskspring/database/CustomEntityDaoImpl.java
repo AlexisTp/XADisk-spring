@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring.database;
+package org.xadisk.integration.spring.xadiskspring.database;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class CustomEntityDaoImpl extends HibernateDaoSupport implements
+class CustomEntityDaoImpl extends HibernateDaoSupport implements
 		CustomEntityDao {
 
 	@Autowired
-	public void initDao(SessionFactory sessionFactory) {
+	void initDao(SessionFactory sessionFactory) {
 		setSessionFactory(sessionFactory);
 	}
 

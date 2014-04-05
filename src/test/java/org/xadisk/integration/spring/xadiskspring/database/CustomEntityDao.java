@@ -1,6 +1,6 @@
-package org.xadisk.integration.spring.xadisk_spring.database;
+package org.xadisk.integration.spring.xadiskspring.database;
 
-public interface CustomEntityDao {
+interface CustomEntityDao {
 
 	void save(CustomEntity ce);
 

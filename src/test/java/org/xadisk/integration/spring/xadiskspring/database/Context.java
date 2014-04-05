@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring.database;
+package org.xadisk.integration.spring.xadiskspring.database;
 
 import java.util.Properties;
 
@@ -12,11 +12,11 @@ import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean;
-import org.xadisk.integration.spring.xadisk_spring.BaseContext;
+import org.xadisk.integration.spring.xadiskspring.BaseContext;
 
 @Configuration
 @Import(value=BaseContext.class)
-@ComponentScan(basePackages = "org.xadisk.integration.spring.xadisk_spring.database")
+@ComponentScan(basePackages = "org.xadisk.integration.spring.xadiskspring.database")
 class Context {
 
 	@Bean
@@ -31,7 +31,7 @@ class Context {
 
 		sessionFactory.setDataSource(datasource());
 		sessionFactory
-				.setPackagesToScan(new String[] { "org.xadisk.integration.spring.xadisk_spring.database" });
+				.setPackagesToScan(new String[] { "org.xadisk.integration.spring.xadiskspring.database" });
 		sessionFactory
 				.setAnnotatedClasses(new Class[] { AnnotationConfiguration.class });
 

@@ -1,15 +1,15 @@
-package org.xadisk.integration.spring.xadisk_spring;
+package org.xadisk.integration.spring.xadiskspring;
 
 import java.util.Hashtable;
 import java.util.Map;
 
 import javax.transaction.RollbackException;
+import javax.transaction.Status;
 import javax.transaction.Synchronization;
 import javax.transaction.SystemException;
 import javax.transaction.Transaction;
 import javax.transaction.TransactionManager;
 
-import org.hibernate.util.JTAHelper;
 import org.xadisk.bridge.proxies.interfaces.XAFileSystem;
 import org.xadisk.bridge.proxies.interfaces.XASession;
 
@@ -39,7 +39,7 @@ public class XADiskSessionFactory {
 		if (txn == null) {
 			throw new RuntimeException("There is not Transaction");
 		}
-		if (!JTAHelper.isInProgress(txn.getStatus())) {
+		if (!isInProgress(txn.getStatus())) {
 			// We could register the session against the transaction even though
 			// it is
 			// not started, but we'd have no guarentee of ever getting the map
@@ -59,8 +59,15 @@ public class XADiskSessionFactory {
 			currentSessionMap.put(txn, session);
 			txManager.getTransaction().enlistResource(session.getXAResource());
 		}
-		
+
 		return session;
+	}
+
+	private boolean isInProgress(int status) {
+
+		return status == Status.STATUS_ACTIVE
+				|| status == Status.STATUS_MARKED_ROLLBACK;
+
 	}
 
 	protected XASession buildOrObtainSession() {

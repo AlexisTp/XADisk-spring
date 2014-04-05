@@ -1,11 +1,11 @@
-package org.xadisk.integration.spring.xadisk_spring.database;
+package org.xadisk.integration.spring.xadiskspring.database;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class CustomEntity {
+class CustomEntity {
 
 	private Long id;
 	private String field1;

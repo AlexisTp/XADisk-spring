@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring;
+package org.xadisk.integration.spring.xadiskspring;
 
 import javax.transaction.SystemException;
 import javax.transaction.TransactionManager;
@@ -9,6 +9,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.jta.JtaTransactionManager;
 import org.xadisk.bridge.proxies.interfaces.XAFileSystem;
+import org.xadisk.integration.spring.xadiskspring.XADiskSessionFactory;
 
 import com.atomikos.icatch.jta.UserTransactionImp;
 import com.atomikos.icatch.jta.UserTransactionManager;

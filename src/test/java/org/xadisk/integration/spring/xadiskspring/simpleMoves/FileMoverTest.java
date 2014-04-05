@@ -1,4 +1,4 @@
-package org.xadisk.integration.spring.xadisk_spring.simpleMoves;
+package org.xadisk.integration.spring.xadiskspring.simpleMoves;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +22,8 @@ import org.xadisk.filesystem.exceptions.FileUnderUseException;
 import org.xadisk.filesystem.exceptions.InsufficientPermissionOnFileException;
 import org.xadisk.filesystem.exceptions.LockingFailedException;
 import org.xadisk.filesystem.exceptions.NoTransactionAssociatedException;
-import org.xadisk.integration.spring.xadisk_spring.BaseContext;
-import org.xadisk.integration.spring.xadisk_spring.FileMover;
+import org.xadisk.integration.spring.xadiskspring.BaseContext;
+import org.xadisk.integration.spring.xadiskspring.FileMover;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { BaseContext.class })
